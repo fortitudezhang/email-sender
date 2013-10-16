@@ -8,6 +8,7 @@
 	<modules>
 		<module>email-sender-spring</module>
 		<module>email-sender-api</module>
+		<module>email-sender-guice</module>
 	</modules>
 	<build>
 		<pluginManagement>
