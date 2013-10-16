@@ -10,6 +10,7 @@
 		<module>email-sender-api</module>
 		<module>email-sender-guice</module>
 		<module>email-sender-osgi</module>
+		<module>email-sender-osgi-extra</module>
 	</modules>
 	<build>
 		<pluginManagement>
@@ -45,28 +46,3 @@
 		</dependencies>
 	</dependencyManagement>
 </project>
-
-
-<!-- 
-	<packaging>bundle</packaging>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<extensions>true</extensions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-scr-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-	<dependencies>
-		<dependency>
-			<groupId>org.apache.felix</groupId>
-			<artifactId>org.apache.felix.scr.annotations</artifactId>
-		</dependency>
-	</dependencies>
-
- -->
