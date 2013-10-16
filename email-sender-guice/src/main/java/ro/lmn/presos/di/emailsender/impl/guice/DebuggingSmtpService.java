@@ -1,4 +1,4 @@
-package ro.lmn.presos.di.emailsender.impl;
+package ro.lmn.presos.di.emailsender.impl.guice;
 
 import ro.lmn.presos.di.emailsender.api.SmtpService;
 
