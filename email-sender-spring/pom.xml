@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>ro.lmn.preso.di</groupId>
+    <artifactId>di-reactor</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>email-sender-spring</artifactId>
+  
+  <dependencies>
+  	<!-- Spring deps START -->
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-core</artifactId>
+  		<version>${spring.version}</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+  		<version>${spring.version}</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>javax.inject</groupId>
+  		<artifactId>javax.inject</artifactId>
+  		<version>1</version>
+  	</dependency>
+  	<!-- Spring deps END -->
+  	
+  	<!-- Internal deps START -->
+  	<dependency>
+  		<groupId>ro.lmn.preso.di.api</groupId>
+  		<artifactId>email-sender-api</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<!-- Internal deps END -->
+  </dependencies>
+  <properties>
+  	<spring.version>3.2.2.RELEASE</spring.version>
+  </properties>
+</project>
