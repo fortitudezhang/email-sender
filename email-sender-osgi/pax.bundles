@@ -1,3 +1,4 @@
 mvn:ro.lmn.preso.di.api/email-sender-api/0.0.1-SNAPSHOT@5@update
 mvn:ro.lmn.preso.di/email-sender-osgi/0.0.1-SNAPSHOT@5@update
+mvn:ro.lmn.preso.di/email-sender-osgi-extra/0.0.1-SNAPSHOT@5@nostart@update
 mvn:org.apache.felix/org.apache.felix.scr/1.6.2@2

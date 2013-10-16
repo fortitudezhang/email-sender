@@ -1,24 +1,33 @@
 package ro.lmn.presos.di.emailsender.impl.osgi;
 
-import java.util.Collections;
+import static org.apache.felix.scr.annotations.ReferenceCardinality.MANDATORY_MULTIPLE;
 
-import org.apache.felix.scr.annotations.Activate;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
+import org.apache.felix.scr.annotations.ReferencePolicy;
+import org.apache.felix.scr.annotations.ReferencePolicyOption;
+import org.apache.felix.scr.annotations.Service;
 
+import ro.lmn.presos.di.emailsender.IEmailSender;
 import ro.lmn.presos.di.emailsender.api.RecipientFinder;
 import ro.lmn.presos.di.emailsender.api.SmtpService;
 import ro.lmn.presos.di.emailsender.api.TextFormatter;
 
-@Component(immediate = true)
-public class EmailSender {
+@Service(IEmailSender.class)
+@Component
+@Reference(policyOption = ReferencePolicyOption.GREEDY, cardinality = MANDATORY_MULTIPLE, policy = ReferencePolicy.DYNAMIC, name="RecipientFinder", referenceInterface = RecipientFinder.class)
+public class EmailSender implements IEmailSender {
 
     @Reference
     private SmtpService smtpService;
     @Reference
     private TextFormatter textFormatter;
-    @Reference
-    private RecipientFinder recipientFinder;
+
+    private List<RecipientFinder> recipientFinder = new CopyOnWriteArrayList<RecipientFinder>();
     
     
     protected void bindSmtpService(SmtpService smtpService) {
@@ -26,23 +35,24 @@ public class EmailSender {
     }
     
     protected void bindRecipientFinder(RecipientFinder recipientFinder) {
-        this.recipientFinder = recipientFinder;
+        this.recipientFinder.add(recipientFinder);
+    }
+
+    protected void unbindRecipientFinder(RecipientFinder recipientFinder) {
+        this.recipientFinder.remove(recipientFinder);
     }
     
     protected void bindTextFormatter(TextFormatter textFormatter) {
         this.textFormatter = textFormatter;
     }
 
-    @Activate
-    protected void activate() {
-        sendMail("Hello, there", "We have modular $product ;-)");
-    }
-    
     public void sendMail(String subject, String template) {
         
-        for ( String recipient : recipientFinder.findRecipients() ) {
-            String finalText = textFormatter.formatText(template, Collections.singletonMap("product", "v1agRa"));
-            smtpService.send(recipient, subject, finalText);
+        for ( RecipientFinder finder : recipientFinder ) {
+            for ( String recipient : finder.findRecipients() ) {
+                String finalText = textFormatter.formatText(template, Collections.singletonMap("product", "v1agRa"));
+                smtpService.send(recipient, subject, finalText);
+            }
         }
     }
 }
