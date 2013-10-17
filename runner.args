@@ -1,0 +1,2 @@
+--dir=target/runner
+scan-file:file:pax.bundles
