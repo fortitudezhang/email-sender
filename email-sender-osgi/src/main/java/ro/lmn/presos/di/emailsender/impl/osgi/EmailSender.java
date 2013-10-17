@@ -45,20 +45,12 @@ public class EmailSender implements IEmailSender {
     @Reference(policyOption = ReferencePolicyOption.GREEDY, cardinality = MANDATORY_MULTIPLE, policy = ReferencePolicy.DYNAMIC, referenceInterface = RecipientFinder.class)
     private List<RecipientFinder> recipientFinder = new CopyOnWriteArrayList<RecipientFinder>();
     
-    protected void bindSmtpService(SmtpService smtpService) {
-        this.smtpService = smtpService;
-    }
-    
     protected void bindRecipientFinder(RecipientFinder recipientFinder) {
         this.recipientFinder.add(recipientFinder);
     }
 
     protected void unbindRecipientFinder(RecipientFinder recipientFinder) {
         this.recipientFinder.remove(recipientFinder);
-    }
-    
-    protected void bindTextFormatter(TextFormatter textFormatter) {
-        this.textFormatter = textFormatter;
     }
 
     public void sendMail(String subject, String template) {
