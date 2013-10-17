@@ -49,7 +49,6 @@ public class EmailSenderApp {
     
     @Bean
     public EmailSender emailSender() {
-        
         return new EmailSender();
     }
 }
