@@ -5,6 +5,14 @@
 	<artifactId>email-sender-reactor</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
+    
+    <licenses>
+      <license>
+        <name>The Apache Software License, Version 2.0</name>
+        <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      </license>
+    </licenses>
+        
 	<modules>
 		<module>email-sender-spring</module>
 		<module>email-sender-api</module>
