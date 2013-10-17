@@ -25,6 +25,17 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<artifactId>email-sender-guice</artifactId>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>ro.lmn.presos.di.emailsender.impl.guice.EmailModule</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>    
 	<dependencies>
 		<dependency>
 			<groupId>com.google.inject</groupId>

@@ -6,12 +6,12 @@ Prime the jars in the local repository by running `mvn install`, then inspect/ex
 Spring
 --
 
-Execute `ro.lmn.presos.di.emailsender.impl.spring.EmailSenderApp` in the email-sender-spring module.
+Execute `mvn exec:java` in the email-sender-spring module.
 
 Guice
 --
 
-Execute `ro.lmn.presos.di.emailsender.impl.guice.EmailModule` in the email-sender-guice module.
+Execute `mvn exec:java` in the email-sender-guice module.
 
 OSGi
 --

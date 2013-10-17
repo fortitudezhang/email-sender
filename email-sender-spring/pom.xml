@@ -25,6 +25,18 @@
   </parent>
   <artifactId>email-sender-spring</artifactId>
   
+  <build>
+      <plugins>
+          <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>exec-maven-plugin</artifactId>
+              <configuration>
+                <mainClass>ro.lmn.presos.di.emailsender.impl.spring.EmailSenderApp</mainClass>
+              </configuration>
+          </plugin>
+      </plugins>
+  </build>
+
   <dependencies>
   	<!-- Spring deps START -->
   	<dependency>
