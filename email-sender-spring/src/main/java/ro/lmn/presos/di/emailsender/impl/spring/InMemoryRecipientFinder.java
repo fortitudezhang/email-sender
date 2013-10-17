@@ -18,8 +18,11 @@ package ro.lmn.presos.di.emailsender.impl.spring;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import ro.lmn.presos.di.emailsender.api.RecipientFinder;
 
+@Component
 public class InMemoryRecipientFinder implements RecipientFinder {
 
     public List<String> findRecipients() {

@@ -19,10 +19,13 @@ import java.util.Collections;
 
 import javax.inject.Inject;
 
+import org.springframework.stereotype.Component;
+
 import ro.lmn.presos.di.emailsender.api.RecipientFinder;
 import ro.lmn.presos.di.emailsender.api.SmtpService;
 import ro.lmn.presos.di.emailsender.api.TextFormatter;
 
+@Component
 public class EmailSender {
 
     private SmtpService smtpService;

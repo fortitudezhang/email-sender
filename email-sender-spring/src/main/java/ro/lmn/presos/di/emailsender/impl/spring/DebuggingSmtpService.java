@@ -15,8 +15,11 @@
  */
 package ro.lmn.presos.di.emailsender.impl.spring;
 
+import org.springframework.stereotype.Component;
+
 import ro.lmn.presos.di.emailsender.api.SmtpService;
 
+@Component
 public class DebuggingSmtpService implements SmtpService {
 
     public void send(String recipient, String subject, String body) {

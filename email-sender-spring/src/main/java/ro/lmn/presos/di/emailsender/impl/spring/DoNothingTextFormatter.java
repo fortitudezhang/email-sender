@@ -17,8 +17,11 @@ package ro.lmn.presos.di.emailsender.impl.spring;
 
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
 import ro.lmn.presos.di.emailsender.api.TextFormatter;
 
+@Component
 public class DoNothingTextFormatter implements TextFormatter {
 
     public String formatText(String template, Map<String, String> vars) {
