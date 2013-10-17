@@ -34,16 +34,16 @@ import ro.lmn.presos.di.emailsender.api.TextFormatter;
 
 @Service(IEmailSender.class)
 @Component
-@Reference(policyOption = ReferencePolicyOption.GREEDY, cardinality = MANDATORY_MULTIPLE, policy = ReferencePolicy.DYNAMIC, name="RecipientFinder", referenceInterface = RecipientFinder.class)
 public class EmailSender implements IEmailSender {
 
     @Reference
     private SmtpService smtpService;
+
     @Reference
     private TextFormatter textFormatter;
 
+    @Reference(policyOption = ReferencePolicyOption.GREEDY, cardinality = MANDATORY_MULTIPLE, policy = ReferencePolicy.DYNAMIC, referenceInterface = RecipientFinder.class)
     private List<RecipientFinder> recipientFinder = new CopyOnWriteArrayList<RecipientFinder>();
-    
     
     protected void bindSmtpService(SmtpService smtpService) {
         this.smtpService = smtpService;
