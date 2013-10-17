@@ -62,4 +62,5 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
+	<name>Email Sender - OSGi implementation</name>
 </project>

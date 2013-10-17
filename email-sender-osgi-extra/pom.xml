@@ -50,4 +50,5 @@
 			<type>bundle</type>
 		</dependency>
 	</dependencies>  
+	<name>Email Sender - OSGi Extras</name>
 </project>

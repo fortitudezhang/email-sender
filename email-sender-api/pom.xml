@@ -34,4 +34,5 @@
 			</plugin>
 		</plugins>
 	</build>  
+	<name>Email Sender - API</name>
 </project>

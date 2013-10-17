@@ -101,4 +101,5 @@
 	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<inceptionYear>2013</inceptionYear>
+	<name>Email Sender - Reactor</name>
 </project>
