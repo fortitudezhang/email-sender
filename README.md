@@ -6,12 +6,12 @@ Prime the jars in the local repository by running `mvn install`, then inspect/ex
 Spring
 --
 
-Execute `mvn exec:java` in the email-sender-spring module.
+Execute `mvn -q exec:java` in the email-sender-spring module.
 
 Guice
 --
 
-Execute `mvn exec:java` in the email-sender-guice module.
+Execute `mvn -q exec:java` in the email-sender-guice module.
 
 OSGi
 --
