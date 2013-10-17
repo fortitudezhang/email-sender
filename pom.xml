@@ -36,6 +36,7 @@
 		<module>email-sender-guice</module>
 		<module>email-sender-osgi</module>
 		<module>email-sender-osgi-extra</module>
+		<module>email-sender-cdi</module>
 	</modules>
 	<build>
 		<pluginManagement>

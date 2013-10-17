@@ -13,6 +13,11 @@ Guice
 
 Execute `mvn -q exec:java` in the email-sender-guice module.
 
+CDI
+---
+
+Execute `mvn -q exec:java` in the email-sender-cdi module.
+
 OSGi
 --
 
